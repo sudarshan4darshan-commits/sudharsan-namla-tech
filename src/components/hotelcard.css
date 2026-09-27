@@ -1,0 +1,229 @@
+.hotel-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 420px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.hotel-image {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  background: var(--color-surface-alt);
+}
+
+.hotel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.hotel-card:hover .hotel-image img {
+  transform: scale(1.05);
+}
+
+.hotel-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+}
+
+.three-dot-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
+  font-size: 19px;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.hotel-card:hover .three-dot-btn {
+  display: flex;
+}
+
+.three-dot-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.menu-options {
+  display: none;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  width: 150px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.hotel-card:hover .menu-options {
+  display: block;
+}
+
+.menu-options button {
+  display: block;
+  width: 100%;
+  padding: 10px 13px;
+  border: none;
+  background: var(--color-surface);
+  text-align: left;
+  font-size: 13px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menu-options button:hover {
+  background: var(--color-surface-alt);
+}
+
+.hotel-info {
+  flex: 1;
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hotel-info h2 {
+  margin: 0 0 6px;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hotel-price {
+  display: inline-block;
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.hotel-snippet {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotel-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(0, 183, 74, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 41, 55, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  cursor: default;
+}
+
+.confirm-box {
+  width: 340px;
+  max-width: 90vw;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 28px 26px 24px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.confirm-box h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.confirm-box p {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.confirm-cancel-btn,
+.confirm-delete-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.confirm-cancel-btn {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.confirm-cancel-btn:hover {
+  background: var(--color-surface-alt);
+}
+
+.confirm-delete-btn {
+  background: #e02424;
+  color: #fff;
+  border: 1px solid #e02424;
+}
+
+.confirm-delete-btn:hover {
+  background: #b91c1c;
+}
