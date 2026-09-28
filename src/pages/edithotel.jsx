@@ -5,13 +5,10 @@ function EditHotel() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Get the selected hotel from the navigation state
+
   const hotel = location.state?.hotel;
 
-  // ===============================
-  // NO HOTEL SELECTED
-  // ===============================
-
+ 
   if (!hotel) {
     return (
       <div className="edit-error">
@@ -32,9 +29,7 @@ function EditHotel() {
     );
   }
 
-  // ===============================
-  // EDIT HOTEL
-  // ===============================
+
 
   return (
     <HotelForm
